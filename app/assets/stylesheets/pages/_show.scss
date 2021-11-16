@@ -53,22 +53,11 @@
 
     .booking-card {
       // border: 1px solid red;
+      // border: 1px solid blue;
       flex: 2;
       display: flex;
       flex-direction: column;
-
-      .form-part{
-        // border: 1px solid blue;
-        flex: 7;
-      }
-
-      .button-part{
-        // border: 1px solid pink;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      align-self: center;
     }
   }
 }
