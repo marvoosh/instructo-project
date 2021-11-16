@@ -13,7 +13,7 @@ require 'faker'
 # user1.save!
 # puts user1.id
 
-Instructor.destroy_all
+# Instructor.destroy_all
 
 30.times do
   first_name, last_name = Faker::Name.unique.name.split
@@ -31,6 +31,6 @@ booking1 = Booking.new(
   end_time: '18:00:00',
   price: 50,
   user_id: User.last.id,
-  instructor_id: Instructor.last.id
+  instructor_id: Instructor.first.id
 )
 booking1.save!

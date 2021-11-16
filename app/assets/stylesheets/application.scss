@@ -10,5 +10,12 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
-@import "pages/show";
+@import "instructors/index";
+@import "instructors/show";
+@import "pages/confirmation";
+
+
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}

@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
 
   def new
-   @booking = Booking.new
-   @instructor = Instructor.find(params[:instructor_id])
+    @booking = Booking.new
+    @instructor = Instructor.find(params[:instructor_id])
   end
 
   def create
