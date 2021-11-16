@@ -1,4 +1,16 @@
-<% @instructors.each do |instructor| %>
-  <%= instructor.first_name %> <%= instructor.last_name %>
-  <p>Expertise: <%= instructor.expertise %></p>
-<% end %>
+<div class="container">
+  <div class="cards">
+    <% @instructors.each do |instructor| %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap" style="height: 220px">
+        <div class="card-body">
+          <div class="card-body-text">
+            <h5 class="card-title"><%= instructor.first_name %> <%= instructor.last_name %></h5>
+            <p class="card-text">Expertise: <%= instructor.expertise %></p>
+          </div>
+          <%= link_to 'See profile', instructor_path(instructor), class: "button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
