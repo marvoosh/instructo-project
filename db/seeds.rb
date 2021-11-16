@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # User.destroy_all
+require 'faker'
 
-user1 = User.new(first_name: 'user', last_name: 'user', email: "#{Faker::Artist.name}@test.com", password: '123123')
-user1.save!
-puts user1.id
+# user1 = User.new(first_name: 'user', last_name: 'user', email: "#{Faker::Artist.name}@test.com", password: '123123')
+# user1.save!
+# puts user1.id
 
 Instructor.destroy_all
 
@@ -20,6 +21,16 @@ Instructor.destroy_all
     first_name: first_name,
     last_name: last_name,
     expertise: Faker::Job.field,
-    user_id: user1.id
+    user_id: User.last.id
   )
 end
+
+booking1 = Booking.new(
+  date: '2021-11-17',
+  start_time: '17:00:00',
+  end_time: '18:00:00',
+  price: 50,
+  user_id: User.last.id,
+  instructor_id: Instructor.last.id
+)
+booking1.save!
