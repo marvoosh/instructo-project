@@ -10,6 +10,8 @@ class InstructorsController < ApplicationController
   end
 
   def show
+    @instructor = Instructor.find(params[:id])
+    @booking = Booking.new
   end
 
   def edit
@@ -19,5 +21,9 @@ class InstructorsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def instructor_params
+    params.require(:instructor).permit(:first_name, :last_name, :expertise)
   end
 end
