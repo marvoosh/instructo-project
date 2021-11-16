@@ -2,7 +2,7 @@
   <div class="cards">
     <% @instructors.each do |instructor| %>
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap" style="height: 220px">
+        <%= image_tag "https://source.unsplash.com/#{(@images).sample}", alt: "card image", class: "card-img-top", style: "height: 220px"%>
         <div class="card-body">
           <div class="card-body-text">
             <h5 class="card-title"><%= instructor.first_name %> <%= instructor.last_name %></h5>
