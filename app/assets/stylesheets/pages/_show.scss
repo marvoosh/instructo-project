@@ -1,0 +1,74 @@
+.instructors {
+
+  .name {
+    color: #7ea381;
+    font-size: 50px;
+  }
+  .expertise {
+    color: #E0C097;
+    font-size: 40px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+
+    .instructor-card {
+      // border: 1px solid purple;
+      display: flex;
+      flex: 3;
+      flex-direction: column;
+      height: 85vh;
+
+      h1,h2,h3,p {
+        text-align: center;
+      }
+    }
+
+    .instructor-card-image {
+      // border: 2px solid red;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+    .instructor-card-text {
+      // border: 2px solid orange;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
+    }
+
+    .booking-card {
+      // border: 1px solid red;
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+
+      .form-part{
+        // border: 1px solid blue;
+        flex: 7;
+      }
+
+      .button-part{
+        // border: 1px solid pink;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
