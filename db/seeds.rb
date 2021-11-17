@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
+User.destroy_all
 require 'faker'
 
-# user1 = User.new(first_name: 'user', last_name: 'user', email: "#{Faker::Artist.name}@test.com", password: '123123')
-# user1.save!
-# puts user1.id
+user1 = User.new(first_name: 'Giorgio', last_name: 'Gristina', email: "#{Faker::Artist.name}@test.com", password: '123123')
+user1.save!
+puts user1.id
 
-# Instructor.destroy_all
+Instructor.destroy_all
 
 30.times do
   first_name, last_name = Faker::Name.unique.name.split
@@ -21,16 +21,16 @@ require 'faker'
     first_name: first_name,
     last_name: last_name,
     expertise: Faker::Job.field,
-    user_id: User.last.id
+    user_id: user1.id
   )
 end
 
-booking1 = Booking.new(
-  date: '2021-11-17',
-  start_time: '17:00:00',
-  end_time: '18:00:00',
-  price: 50,
-  user_id: User.last.id,
-  instructor_id: Instructor.first.id
-)
-booking1.save!
+# booking1 = Booking.new(
+#   date: '2021-11-17',
+#   start_time: '17:00:00',
+#   end_time: '18:00:00',
+#   price: 50,
+#   user_id: User.last.id,
+#   instructor_id: Instructor.first.id
+# )
+# booking1.save!

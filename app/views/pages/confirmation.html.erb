@@ -1,8 +1,11 @@
 <div class="card-confirmation">
   <h1>Booking confirmed</h1>
   <h4>
-    🎉 <strong><%= @booking.user.first_name %></strong>, your session is all booked up! 🎉
+    🎉 <strong><%= current_user.first_name %></strong>, your session is all booked up! 🎉
   </h4>
-  <p>Date: <%= @booking.date %>   |   Time: <%= @booking.start_time %></p>
-  <%= link_to 'Add to calander', '#', class: "button" %>
+  <p>Date: <%= @booking.date.to_time.strftime('%m/%d/%Y') %>   |   Time: <%= @booking.start_time.to_time.strftime('%H:%M') %></p>
+  <div class="buttons-inline">
+    <%= link_to 'Add to calander', '#', class: "button" %>
+    <%= link_to 'Continue browsing', instructors_path, class: "button" %>
+  </div>
 </div>
