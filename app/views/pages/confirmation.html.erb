@@ -3,6 +3,6 @@
   <h4>
     🎉 <strong><%= @booking.user.first_name %></strong>, your session is all booked up! 🎉
   </h4>
-  <p>Date: <%= @booking.date %>   |   Time: <%= @booking.start_time %></p>
+  <p>Date: <%= @booking.date.to_time.strftime('%m/%d/%Y') %>   |   Time: <%= @booking.start_time.to_time.strftime('%H:%M') %></p>
   <%= link_to 'Add to calander', '#', class: "button" %>
 </div>
