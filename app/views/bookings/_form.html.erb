@@ -1,14 +1,14 @@
 <div class="container">
-  <h1>New Booking</h1><br>
+  <h1>Book Your Session!</h1><br>
   <%# <div class="row justify-content-center"> %>
 
     <%= flash[:message] %>
       <%# <%= form_for [@instructor, @booking] do |f| %>
       <%= simple_form_for [ @instructor, @booking ] do |f| %>
-      <%= f.input :price %>
+      <%= f.input :price, label: "Duration" %>
       <%= f.input :date %>
       <%= f.input :start_time %>
-      <%= f.input :end_time %>
+      <%# <%= f.input :end_time %>
 
       <%= f.submit "Submit", class: "button" %><% end %>
   <%# </div> %>
