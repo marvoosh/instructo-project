@@ -8,7 +8,13 @@
             <h5 class="card-title"><%= instructor.first_name %> <%= instructor.last_name %></h5>
             <p class="card-text">Expertise: <%= instructor.expertise %></p>
           </div>
-          <%= link_to 'See profile', instructor_path(instructor), class: "button" %>
+          <div class="card-footer-price">
+            <%= link_to 'See profile', instructor_path(instructor), class: "button" %>
+            <div class="price">
+              <h5>£45.99 </h5>
+              <p>/hour</p>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

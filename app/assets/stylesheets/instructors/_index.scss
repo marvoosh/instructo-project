@@ -16,7 +16,31 @@
 
 .card-body-text {
   margin-bottom: 30px;
+
+  h5 {
+    color: #7ea381;
+    font-size: 28px;
+  }
 }
+
+.card-footer-price {
+  display: flex;
+  justify-content: space-between;
+
+
+
+  .price {
+    display: flex;
+    align-self: flex-end;
+
+    p {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+  }
+}
+
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
