@@ -12,9 +12,19 @@ class InstructorsController < ApplicationController
   end
 
   def new
+    @instructor = Instructor.new(params[:id])
   end
 
   def create
+    @instructor = Instructor.new(instructor_params)
+    @instructor.user = current_user
+      if @instructor.save
+        redirect_to instructor_path(@instructor)
+      else
+        flash[:message] = @instructor.errors.full_messages
+        render :new
+      end
+
   end
 
   def show
@@ -36,9 +46,16 @@ class InstructorsController < ApplicationController
     @bookings = @instructor.bookings
   end
 
+  def accept_booking
+    @booking = Booking.find(params[:booking_id])
+    @booking.accepted = true
+    @booking.save
+    redirect_to instructor_bookings_path(@booking.instructor)
+  end
+
   private
 
   def instructor_params
-    params.require(:instructor).permit(:first_name, :last_name, :expertise)
+    params.require(:instructor).permit(:first_name, :last_name, :expertise, :price, :bio)
   end
 end

@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @instructor = Instructor.find(params[:instructor_id])
     @booking.instructor = @instructor
-    @booking.user = @instructor.user
+    @booking.user = current_user
 
     if @booking.save
       redirect_to confirmation_path(@booking)
@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    raise
     redirect_to dashboard_path(@booking.user)
   end
 
