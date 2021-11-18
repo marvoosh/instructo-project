@@ -1,5 +1,5 @@
 .instructors {
-
+  background-color: white;
   .name {
     color: #7ea381;
     font-size: 50px;
@@ -23,11 +23,19 @@
       display: flex;
       flex: 3;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       height: 85vh;
 
       h1,h2,h3,p {
         text-align: center;
       }
+    }
+
+    .card-content {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
     }
 
     .instructor-card-image {
@@ -58,6 +66,18 @@
       display: flex;
       flex-direction: column;
       align-self: center;
+      position: relative;
+
+      .divider {
+        background: rgb(202, 202, 202);
+        border-radius: 2px;
+        position: absolute;
+        width: 2px;
+        height: 50vh;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 }
