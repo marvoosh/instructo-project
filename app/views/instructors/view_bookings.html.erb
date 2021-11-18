@@ -1,9 +1,15 @@
 <div class="container">
   <h1>My bookings</h1>
   <div class="row">
-    <div class="col ">
+    <div class="col flex">
       <% @bookings.each do |booking| %>
-        <h6><%= booking.start_time %></h6>
+        <div class="booking-card">
+          <h6><%= booking.start_time %></h6>
+        </div>
+        <div class="buttons">
+        accept
+        decline
+        </div>
       <% end %>
     </div>
   </div>
