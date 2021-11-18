@@ -30,6 +30,13 @@ class InstructorsController < ApplicationController
     @bookings = @instructor.bookings
   end
 
+  def accept_booking
+    @booking = Booking.find(params[:booking_id])
+    @booking.accepted = true
+    @booking.save
+    redirect_to instructor_bookings_path(@booking.instructor)
+  end
+
   private
 
   def instructor_params
