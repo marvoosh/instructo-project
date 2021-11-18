@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>My bookings</h1>
+  <div class="row">
+    <div class="col flex">
+      <% @bookings.each do |booking| %>
+        <div class="booking-card">
+          <div class="left-side">
+            <div class="text">
+              <h6><strong><%= booking.instructor.first_name %> <%= booking.instructor.last_name %></strong></h6>
+              <h6>Date: <%= booking.date.to_time.strftime('%d/%m/%Y') %> | Time: <%= booking.start_time.to_time.strftime('%H:%M') %></h6>
+            </div>
+          </div>
+          <div class="buttons">
+            <%= link_to 'Cancel', booking_path(booking), method: :delete, class: 'button-sm' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
