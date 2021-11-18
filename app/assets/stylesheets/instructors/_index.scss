@@ -1,9 +1,16 @@
 // Import page-specific CSS files here.
 @import "pages/home";
 
-// .cards-box {
-//   margin: 10px;
-// }
+.form-group {
+  &.find-instructor {
+    flex: 1;
+  }
+
+  .btn.btn-primary {
+    background-color: #90c995;
+    border-color: #90c995;
+  }
+}
 
 .cards {
   flex-grow: 1;
