@@ -20,6 +20,7 @@ class InstructorsController < ApplicationController
     @instructor.user = current_user
     @instructor.first_name = current_user.first_name
     @instructor.last_name = current_user.last_name
+    @instructor.profile_url = current_user.profile_url
     @instructor.user.instructor = true
     if @instructor.save
       redirect_to instructor_bookings_path(@instructor)
