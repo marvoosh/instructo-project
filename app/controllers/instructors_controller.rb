@@ -12,6 +12,7 @@ class InstructorsController < ApplicationController
   def create
     @instructor = Instructor.new(instructor_params)
     @instructor.user = current_user
+    @instructor.user.instructor = true
       if @instructor.save
         redirect_to instructor_path(@instructor)
       else
