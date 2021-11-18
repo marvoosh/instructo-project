@@ -1,13 +1,11 @@
 <div class="container">
   <%# <div class="card"> %>
-   <h1 style="text-align:center">Create Instructor profile</h1><br>
+  <h1 style="text-align:center">Create an Instructor Profile</h1><br>
     <%# <div class="row justify-content-center"> %>
-
+  <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
         <%= simple_form_for [ @instructor ] do |f| %>
-        <%= f.input :first_name, label: "First Name" %>
-        <%= f.input :last_name, label: "Last Name" %>
-        <%= f.input :expertise, label: "expertise" %>
-        <%= f.input :price, label: "price per hour" %>
+        <%= f.input :expertise, label: "Expertise" %>
+        <%= f.input :price, label: "Price per hour" %>
 
         <%= f.input :bio, label: "Bio" %>
 
