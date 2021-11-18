@@ -5,7 +5,7 @@
   </h4>
   <p>Date: <%= @booking.date.to_time.strftime('%d/%m/%Y') %>   |   Time: <%= @booking.start_time.to_time.strftime('%H:%M') %></p>
   <div class="buttons-inline">
-    <%= link_to 'Add to calander', '#', class: "button" %>
+    <%= link_to 'My bookings', dashboard_path(current_user), class: "button" %>
     <%= link_to 'Continue browsing', instructors_path, class: "button" %>
   </div>
 </div>
