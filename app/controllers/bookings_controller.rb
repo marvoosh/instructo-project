@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @instructor = Instructor.find(params[:instructor_id])
     @booking.instructor = @instructor
-    @booking.user = @instructor.user
+    @booking.user = current_user
 
     if @booking.save
       redirect_to confirmation_path(@booking)
