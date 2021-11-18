@@ -18,14 +18,15 @@ class InstructorsController < ApplicationController
   def create
     @instructor = Instructor.new(instructor_params)
     @instructor.user = current_user
+    @instructor.first_name = current_user.first_name
+    @instructor.last_name = current_user.last_name
     @instructor.user.instructor = true
-      if @instructor.save
-        redirect_to instructor_bookings_path(@instructor)
-      else
-        flash[:message] = @instructor.errors.full_messages
-        render :new
-      end
-
+    if @instructor.save
+      redirect_to instructor_bookings_path(@instructor)
+    else
+      flash[:message] = @instructor.errors.full_messages
+      render :new
+    end
   end
 
   def show
