@@ -1,3 +1,14 @@
+<div class="form-section">
+  <%= form_tag instructors_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an instructor"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
 <div class="cards-box">
   <div class="cards">
     <% @instructors.each do |instructor| %>
