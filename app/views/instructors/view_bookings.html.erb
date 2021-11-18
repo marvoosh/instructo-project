@@ -4,11 +4,17 @@
     <div class="col flex">
       <% @bookings.each do |booking| %>
         <div class="booking-card">
-          <h6><%= booking.start_time %></h6>
-        </div>
-        <div class="buttons">
-        accept
-        decline
+          <div class="left-side">
+            <div class="image">avatar</div>
+            <div class="text">
+              <h6><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong> - </h6>
+              <h6>Date: <%= booking.date.to_time.strftime('%d/%m/%Y') %> | Time: <%= booking.start_time.to_time.strftime('%H:%M') %></h6>
+            </div>
+          </div>
+          <div class="buttons">
+            <%= link_to 'Accept', '#', class: 'button-sm' %>
+            <%= link_to 'Decline', '#', class: 'button-sm', id: 'decline' %>
+          </div>
         </div>
       <% end %>
     </div>

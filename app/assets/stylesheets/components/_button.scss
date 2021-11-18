@@ -6,9 +6,26 @@
   transition: 2ms;
 }
 
-.button:hover {
+.button:hover, .button-sm:hover {
   text-decoration: none;
   color: rgb(243, 240, 215);
   background-color: rgb(226, 108, 108);
   // border: 2px solid rgb(243, 240, 215);
+}
+
+.button-sm {
+  background-color: rgb(255, 120, 120);
+  color: rgb(243, 240, 215);
+  padding: 10px 15px;
+  border-radius: 50px;
+  transition: 2ms;
+  font-size: 14px;
+}
+
+#decline {
+  background-color: #E0C097;
+}
+
+#decline:hover {
+  background-color: #b99f7c;
 }
