@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card">
+   <h1 style="text-align:center">Create Instructor profile</h1><br>
+    <div class="row justify-content-center">
+
+        <%= simple_form_for [ @instructor ] do |f| %>
+        <%= f.input :first_name, label: "First Name" %>
+        <%= f.input :last_name, label: "Last Name" %>
+        <%= f.input :expertise, label: "expertise" %>
+        <%= f.input :bio, label: "Bio" %>
+        <%= f.button :submit, class: "button"%>
+        <%# <%= link_to 'See profile', class: "button" %>
+
+        <% end %>
+    </div>
+  </div>
+</div>
