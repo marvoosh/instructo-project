@@ -7,23 +7,65 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-require 'faker'
 
-user1 = User.new(first_name: 'Giorgio', last_name: 'Gristina', email: "#{Faker::Artist.name}@test.com", password: '123123')
-user1.save!
-puts user1.id
+user1 = User.create(first_name: 'Buffy', last_name: 'Summers', email: "buffy@test.com", password: '123123',instructor: true, profile_url: 'https://hips.hearstapps.com/digitalspyuk.cdnds.net/15/50/1449943322-gettyimages-51103216-buffy.jpg')
+user2 = User.create(first_name: 'Willow', last_name: 'Rosenberg', email: "willow@test.com", password: '123123',instructor: true, profile_url: 'https://junkee.com/wp-content/uploads/2017/03/willow-2.jpg')
+user3 = User.create(first_name: 'Xander', last_name: 'Harris', email: "xander@test.com", password: '123123', profile_url: 'https://m.media-amazon.com/images/M/MV5BMTM3NTA3MzM3N15BMl5BanBnXkFtZTYwMTY4NjEz._V1_UY1200_CR172,0,630,1200_AL_.jpg')
+user4 = User.create(first_name: 'Angel', last_name: ' ', email: "angel@test.com", password: '123123', profile_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_u-knlE4hna_4fnfTkgMKPLLXpI6pm6dzlQ&usqp=CAU')
+user5 = User.create(first_name: 'Marva', last_name: 'Noah', email: "marva@test.com", password: '123123', profile_url: 'https://ca.slack-edge.com/T02NE0241-U02GFM63B8B-3067df17e3fa-512')
 
 Instructor.destroy_all
 
-30.times do
-  first_name, last_name = Faker::Name.unique.name.split
-  Instructor.create!(
-    first_name: first_name,
-    last_name: last_name,
-    expertise: Faker::Job.field,
-    user_id: user1.id
-  )
-end
+Instructor.create!(
+  first_name: 'Buffy',
+  last_name: 'Summers',
+  expertise: 'Vampire Slayer',
+  user_id: user1.id,
+  price: 109,
+  bio: 'If you got vampires, I can show you how to slay them!',
+  profile_url: 'https://hips.hearstapps.com/digitalspyuk.cdnds.net/15/50/1449943322-gettyimages-51103216-buffy.jpg',
+  cover_url: 'https://365thingsinhouston.com/wp-content/uploads/2015/10/myths-and-legends-of-the-graveyard-nmfh-696x407.jpg'
+)
+Instructor.create!(
+  first_name: 'Willow',
+  last_name: 'Rosenberg',
+  expertise: 'Witchcraft',
+  user_id: user2.id,
+  price: 89,
+  bio: 'Witchcraft for all! I promise that in just a few short lessons you can also be a witch!',
+  profile_url: 'https://junkee.com/wp-content/uploads/2017/03/willow-2.jpg',
+  cover_url: 'https://blogs.loc.gov/loc/files/2019/10/Screen-Shot-2019-10-29-at-6.45.46-PM-1024x608.png'
+)
+Instructor.create!(
+  first_name: 'Xander',
+  last_name: 'Harris',
+  expertise: 'Useless',
+  user_id: user3.id,
+  price: 5,
+  bio: "There is abslutely nothing I am good at. I wouldn't book with me if I were you",
+  profile_url: 'https://m.media-amazon.com/images/M/MV5BMTM3NTA3MzM3N15BMl5BanBnXkFtZTYwMTY4NjEz._V1_UY1200_CR172,0,630,1200_AL_.jpg',
+  cover_url: 'https://source.unsplash.com/HZrYYi6Orgg'
+)
+Instructor.create!(
+  first_name: 'Angel',
+  last_name: ' ',
+  expertise: 'Mirrors',
+  user_id: user4.id,
+  price: 55,
+  bio: "I am broody and moody and can show you how to become one too...",
+  profile_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_u-knlE4hna_4fnfTkgMKPLLXpI6pm6dzlQ&usqp=CAU',
+  cover_url: 'https://source.unsplash.com/hsg538WrP0Y'
+)
+Instructor.create!(
+  first_name: 'Spike',
+  last_name: 'The Bloody',
+  expertise: 'Bleeching hair',
+  user_id: user1.id,
+  price: 69,
+  bio: "Anything you can do I can do better!",
+  profile_url: 'https://hips.hearstapps.com/digitalspyuk.cdnds.net/14/27/ustv-buffy-the-vampire-slayer-spike.jpg',
+  cover_url: 'https://www.zmescience.com/mrf4u/statics/i/ps/cdn.zmescience.com/wp-content/uploads/2018/05/blood-1813410_960_720.jpg?width=1200&enable=upscale'
+)
 
 # booking1 = Booking.new(
 #   date: '2021-11-17',
