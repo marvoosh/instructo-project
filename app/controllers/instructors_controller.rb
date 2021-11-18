@@ -25,6 +25,13 @@ class InstructorsController < ApplicationController
   def destroy
   end
 
+  def view_bookings
+    @instructor = Instructor.find(params[:id])
+    @bookings = @instructor.bookings
+  end
+
+  private
+
   def instructor_params
     params.require(:instructor).permit(:first_name, :last_name, :expertise)
   end
