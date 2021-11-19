@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     if @booking.user.instructor
-      redirect_to instructor_bookings_path(@booking.instructor)
+      redirect_to instructor_booking_path
     else
       redirect_to dashboard_path(@booking.user)
     end
