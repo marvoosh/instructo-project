@@ -1,13 +1,22 @@
 <div class="container">
+  <div class="page-top">
+    <h1>My profile</h1>
+    <%= image_tag @instructor.profile_url, class: 'rounded-circle', style: "width: 150px" %>
+    <h2><%= @instructor.bio %></h2>
+  </div>
+</div>
+
+
+<div class="container">
   <h1>My bookings</h1>
   <div class="row">
     <div class="col flex">
       <% @bookings.each do |booking| %>
         <div class="booking-list">
           <div class="left-side">
-            <div class="image">avatar</div>
+            <%= image_tag booking.user.profile_url, class: 'avatar booking-list', style: 'width: 50px' %>
             <div class="text">
-              <h6><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong> - </h6>
+              <h6><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong> <%= booking.duration %> </h6>
               <h6>Date: <%= booking.date.to_time.strftime('%d/%m/%Y') %> | Time: <%= booking.start_time.to_time.strftime('%H:%M') %></h6>
             </div>
           </div>

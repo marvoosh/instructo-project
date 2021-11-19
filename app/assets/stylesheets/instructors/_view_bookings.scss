@@ -1,4 +1,8 @@
-
+.page-top {
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
 
 .booking-list {
   display: flex;
@@ -13,11 +17,12 @@
   }
 }
 
-.image {
-  border: 1px solid black;
-  border-radius: 50%;
-  width: 54;
-  margin-right: 20px;
+.text {
+  padding-top: 10px;
+}
+
+.booking-list {
+  margin-right: 10px;
 }
 
 .buttons {
