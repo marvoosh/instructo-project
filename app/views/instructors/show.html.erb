@@ -1,22 +1,25 @@
 <section class="instructors">
   <div class="container-fluid">
-    <div class="instructor-card">
-      <div class="card-content">
+    <div class="instructor-card pr-5">
       <h2 class="name"><%= @instructor.first_name %> <%= @instructor.last_name %></h2>
-      <div class="instructor-card-image">
-        <% if @instructor.profile_url.nil? %>
-          <img src="https://source.unsplash.com/480x480/?person,face" class="rounded-circle" alt="...">
-        <% else %>
-          <%= image_tag @instructor.profile_url, class: "rounded-circle" %>
-        <% end %>
+      <div class="instructor-cover mb-5" style="background-image: url('<%= @instructor.cover_url %>');">
+        <div class="instructor-card-image">
+          <% if @instructor.profile_url.nil? %>
+            <img src="https://source.unsplash.com/480x480/?person,face" class="rounded-circle" alt="...">
+          <% else %>
+            <%= image_tag @instructor.profile_url, class: "rounded-circle" %>
+          <% end %>
+        </div>
       </div>
-      <div class="instructor-card-text">
-        <h3 class="expertise"><%= @instructor.expertise %></h3>
-        <p class="description"><%= @instructor.bio %></p>
-      </div></div>
+      <div class="card-content">
+        <div class="instructor-card-text">
+          <h3 class="expertise"><%= @instructor.expertise %></h3>
+          <p class="description"><%= @instructor.bio %></p>
+        </div>
+      </div>
     </div>
 
-    <div class="booking-card">
+    <div class="booking-card pl-3">
       <div class="divider"></div>
       <%= render partial: 'bookings/form' %>
     </div>
