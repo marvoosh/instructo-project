@@ -23,7 +23,7 @@ class InstructorsController < ApplicationController
     @instructor.profile_url = current_user.profile_url
     @instructor.user.instructor = true
     if @instructor.save
-      redirect_to instructor_bookings_path(@instructor)
+      redirect_to instructor_booking_path
     else
       flash[:message] = @instructor.errors.full_messages
       render :new
