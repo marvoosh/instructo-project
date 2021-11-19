@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
+Instructor.destroy_all
+User.destroy_all
 
 user1 = User.create(first_name: 'Buffy', last_name: 'Summers', email: "buffy@test.com", password: '123123',instructor: true, profile_url: 'https://upload.wikimedia.org/wikipedia/en/a/a2/S514_Buffy.png')
 user2 = User.create(first_name: 'Willow', last_name: 'Rosenberg', email: "willow@test.com", password: '123123',instructor: true, profile_url: 'https://openpsychometrics.org/tests/characters/test-resources/pics/BVS/3.jpg')
@@ -14,7 +15,6 @@ user3 = User.create(first_name: 'Xander', last_name: 'Harris', email: "xander@te
 user4 = User.create(first_name: 'Angel', last_name: ' ', email: "angel@test.com", password: '123123', profile_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/top-1553084314.jpg?resize=480:*')
 user5 = User.create(first_name: 'Marva', last_name: 'Noah', email: "marva@test.com", password: '123123', profile_url: 'https://ca.slack-edge.com/T02NE0241-U02GFM63B8B-3067df17e3fa-512')
 
-Instructor.destroy_all
 
 Instructor.create!(
   first_name: 'Buffy',
