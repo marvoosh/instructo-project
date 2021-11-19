@@ -45,7 +45,7 @@ class InstructorsController < ApplicationController
   end
 
   def view_bookings
-    @instructor = Instructor.find(params[:instructor_id])
+    @instructor = current_user.instructors.first
     @bookings = @instructor.bookings
   end
 
