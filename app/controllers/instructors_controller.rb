@@ -45,7 +45,7 @@ class InstructorsController < ApplicationController
   end
 
   def view_bookings
-    @instructor = Instructor.find(params[:id])
+    @instructor = Instructor.find(params[:instructor_id])
     @bookings = @instructor.bookings
   end
 
