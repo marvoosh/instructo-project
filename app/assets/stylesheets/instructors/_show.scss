@@ -70,7 +70,7 @@
       align-items: center;
       position: absolute;
       left: 50%;
-      top: 310px;
+      top: calc(100% - 90px);
       transform: translateX(-50%);
 
       img {
